@@ -1,1 +1,0 @@
-self.__REACT_LOADABLE_MANIFEST={"_app.js -> ./_app.js?hasBoundary":{"id":"_app.js -> ./_app.js?hasBoundary","files":["static/chunks/pages__app_js_hasBoundary.js"]},"video/[slug].js -> ./[slug].js?hasBoundary":{"id":"video/[slug].js -> ./[slug].js?hasBoundary","files":["static/chunks/pages_video_slug_js_hasBoundary.js"]}}
