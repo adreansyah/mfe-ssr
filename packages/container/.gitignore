@@ -1,0 +1,80 @@
+Skip to content
+Search or jump to…
+Pull requests
+Issues
+Codespaces
+Marketplace
+Explore
+ 
+@adreansyah 
+katebrune
+/
+nextjs-micro-poc
+Public
+Fork your own copy of katebrune/nextjs-micro-poc
+Code
+Issues
+Pull requests
+Actions
+Projects
+Security
+Insights
+Beta Try the new code view
+nextjs-micro-poc/app3/.gitignore
+
+Kate Brune added app3
+Latest commit 3a04358 on Dec 15, 2020
+ History
+ 0 contributors
+34 lines (26 sloc)  386 Bytes
+ 
+
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# local env files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# vercel
+.vercel
+Footer
+© 2023 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Docs
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+nextjs-micro-poc/.gitignore at master · katebrune/nextjs-micro-poc
