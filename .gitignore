@@ -7,4 +7,4 @@ packages-lock.json
 packages/*/node_modules
 packages/*/.next
 packages/*/yarn.lock
-packages/*/packages-lock.json
+packages/*/package-lock.json
