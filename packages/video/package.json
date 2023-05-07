@@ -1,0 +1,19 @@
+{
+  "name": "video",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --port 4202",
+    "build": "next build",
+    "start": "next start --port 4202",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@module-federation/nextjs-mf": "^6.4.0",
+    "axios": "^1.4.0",
+    "next": "13.4.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "swr": "^2.1.5"
+  }
+}
