@@ -1,14 +1,14 @@
 ## Use the official Node.js image as the base image
 FROM node:16.14.0-alpine as build
 
-# Use microfrontend-shared:latest deployment as tailwind shared
-FROM microfrontend-shared:latest AS shared
+# Use edts-shared:latest deployment as tailwind shared
+FROM edts-shared:latest AS shared
 
 WORKDIR /app
 
 RUN rm -rf /app/*
 
-COPY --from=microfrontend-shared:latest /app /app/shared
+COPY --from=edts-shared:latest /app /app/shared
 
 RUN mkdir -p /app/container
 

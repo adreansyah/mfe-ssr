@@ -4,16 +4,19 @@ services:
     build:
       context: ./packages/shared
       dockerfile: Dockerfile    
+    image: edts-shared:latest
   microfrontend1:
     build:
       context: ./packages/container
       dockerfile: Dockerfile
+    image: edts-container:latest
     ports:
       - 4200:4200
   microfrontend2:
     build:
       context: ./packages/movies
       dockerfile: Dockerfile
+    image: edts-movies:latest
     ports:
       - 4201:4201
   # Add more servi
