@@ -1,5 +1,5 @@
 {
   "watch": ["packages/**/**/*"],
   "ext": "js,jsx,ts,tsx,json",
-  "exec": "concurrently --kill-others \"npx lerna run dev   --stream\""
+  "exec": "concurrently --kill-others \"npx lerna run start   --stream\""
 }

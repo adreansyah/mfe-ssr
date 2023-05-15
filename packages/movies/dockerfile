@@ -1,5 +1,5 @@
 ## Use the official Node.js image as the base image
-FROM node:16.14.0-alpine as build
+FROM node:16 as build
 
 # Use edts-shared:latest deployment as tailwind shared
 FROM edts-shared:latest AS shared
