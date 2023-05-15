@@ -18,7 +18,7 @@ const nextConfig = {
 const remotes = isServer => {
   const location = isServer ? 'ssr' : 'chunks';
   return {
-    movies: `movies@http://localhost:4208/_next/static/${location}/remoteEntry.js`
+    movies: `movies@http://localhost:4201/_next/static/${location}/remoteEntry.js`
   };
 };
 
