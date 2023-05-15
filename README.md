@@ -10,6 +10,7 @@ $ cd mfe-ssr
 #### if using yarn
 ```
 $ cd {your-repo}
+$ yarn install
 $ yarn postinstall
 $ yarn start
 ```
@@ -17,6 +18,7 @@ $ yarn start
 #### if using npm
 ```
 $ cd {your-repo}
+$ npm run install
 $ npm run postinstall
 $ npm run start
 ```
