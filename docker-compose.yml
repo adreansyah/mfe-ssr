@@ -1,0 +1,19 @@
+version: '3'
+services:
+  shared:
+    build:
+      context: ./packages/shared
+      dockerfile: Dockerfile    
+  microfrontend1:
+    build:
+      context: ./packages/container
+      dockerfile: Dockerfile
+    ports:
+      - 4200:4200
+  microfrontend2:
+    build:
+      context: ./packages/movies
+      dockerfile: Dockerfile
+    ports:
+      - 4201:4201
+  # Add more servi

@@ -7,7 +7,8 @@
   "scripts": {
     "start": "nodemon -x",
     "build": "npx lerna run build",
-    "postinstall": "lerna bootstrap"
+    "postinstall": "lerna bootstrap",
+    "start:production": "npx lerna run start"
   },
   "dependencies": {
     "axios": "^1.4.0",
