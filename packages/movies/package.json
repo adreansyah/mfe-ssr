@@ -4,8 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev -p 4201",
-    "build": "next build",
     "start": "next start -p 4201",
+    "start:staging": "NODE_ENV=staging next start -p 4201",
+    "start:pre-production": "NODE_ENV=pre-production next start -p 4201",
+    "start:production": "NODE_ENV=production next start -p 4201",
+    "build": "next build",
+    "build:staging": "NODE_ENV=staging next build",
+    "build:pre-production": "NODE_ENV=pre-production next build",
+    "build:production": "NODE_ENV=production next build",
     "lint": "next lint"
   },
   "dependencies": {

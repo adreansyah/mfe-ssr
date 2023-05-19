@@ -1,11 +1,17 @@
 {
-  "name": "container",
+  "name": "host",
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "nodemon -x 'next dev --port 4200'",
+    "dev": "next dev -p 4200",
+    "start": "next start -p 4200",
+    "start:staging": "NODE_ENV=staging next start -p 4200",
+    "start:pre-production": "NODE_ENV=pre-production next start -p 4200",
+    "start:production": "NODE_ENV=production next start -p 4200",
     "build": "next build",
-    "start": "next start --port 4200",
+    "build:staging": "NODE_ENV=staging next build",
+    "build:pre-production": "NODE_ENV=pre-production next build",
+    "build:production": "NODE_ENV=production next build",
     "lint": "next lint"
   },
   "dependencies": {

@@ -10,28 +10,34 @@ RUN rm -rf /app/*
 
 COPY --from=edts-shared:latest /app /app/shared
 
-RUN mkdir -p /app/container
+RUN mkdir -p /app/host
 
 
-WORKDIR /app/container
+WORKDIR /app/host
 
 # Copy package.json and package-lock.json (if available)
-COPY package*.json /app/container
+COPY package*.json /app/host
 
 # Install project dependencies
-RUN npm install
+RUN yarn install
 
 # Copy the rest of the application code
-COPY . /app/container
+COPY . /app/host
 
 # Build the Next.js application
-RUN npm run build
+ARG ENVIRONTMENT
+RUN yarn build:$ENVIRONTMENT 
 
 # Set the environment variable for production
-ENV NODE_ENV production
+ARG ENVIRONTMENT
+ENV NODE_ENV $ENVIRONTMENT
 
 # Expose the port on which the application will run
 EXPOSE 3000
 
 # Start the Next.js application
-CMD ["npm", "start"]
+CMD ["npm", "run", "start"]
+
+
+
+

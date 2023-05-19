@@ -4,19 +4,29 @@ services:
     build:
       context: ./packages/shared
       dockerfile: Dockerfile    
-    image: edts-shared:latest
-  microfrontend1:
+    image: edts-shared:latest   
+
+  host:
     build:
-      context: ./packages/container
+      context: ./packages/host
       dockerfile: Dockerfile
-    image: edts-container:latest
+      args:
+        - ENVIRONTMENT=staging
+    image: edts-host:latest
+    depends_on:
+      - shared
     ports:
       - 4200:4200
-  microfrontend2:
+
+
+  movies:
     build:
       context: ./packages/movies
       dockerfile: Dockerfile
+      args:
+        - ENVIRONTMENT=staging
     image: edts-movies:latest
+    depends_on:
+      - host
     ports:
       - 4201:4201
-  # Add more servi

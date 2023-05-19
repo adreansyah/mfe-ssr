@@ -2,15 +2,27 @@
 const NextFederationPlugin = require('@module-federation/nextjs-mf');
 
 
-
 const nextConfig = {
   reactStrictMode: true,
-  assetPrefix: 'http://localhost:4201',
-  images:{
+  assetPrefix: process.env.HOST,
+  images: {
     domains: ["image.tmdb.org"],
-  }
+  },
+  swcMinify: true,
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: '*',
+          },
+        ],
+      },
+    ];
+  },
 }
-const deps = require("./package.json").dependencies;
 module.exports = {
   ...nextConfig,
   webpack(config, { isServer }) {

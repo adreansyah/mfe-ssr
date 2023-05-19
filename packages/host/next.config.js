@@ -1,24 +1,30 @@
-/** @type {import('next').NextConfig} */
-// require('./styles/tailwind.module.css')
 const NextFederationPlugin = require('@module-federation/nextjs-mf');
-
-// require('./styles/')
 const nextConfig = {
   reactStrictMode: true,
-  assetPrefix: 'http://localhost:4200',
+  assetPrefix: process.env.HOST,
   images: {
     domains: ["image.tmdb.org"]
   },
   swcMinify: true,
-  experimental: {
-    appDir: true,
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'Access-Control-Allow-Origin',
+            value: '*',
+          },
+        ],
+      },
+    ];
   },
 }
 
 const remotes = isServer => {
   const location = isServer ? 'ssr' : 'chunks';
   return {
-    movies: `movies@http://localhost:4201/_next/static/${location}/remoteEntry.js`
+    movies: `movies@${process.env.MOVIES_HOST}/_next/static/${location}/remoteEntry.js`
   };
 };
 
@@ -28,7 +34,7 @@ module.exports = {
   webpack(config, options) {
     config.plugins.push(
       new NextFederationPlugin({
-        name: 'container',
+        name: 'host',
         filename: 'static/chunks/remoteEntry.js',
         exposes: {
           // './styles': 'styles/tailwind.module.css'

@@ -5,13 +5,30 @@
     "lerna": "^4.0.0"
   },
   "scripts": {
-    "start": "nodemon -x",
-    "build": "npx lerna run build",
-    "postinstall": "lerna bootstrap",
-    "start:production": "npx lerna run start"
+    "dev": "nodemon -x",
+    "build:production": "npx lerna run build:production",
+    "start": "lerna run start --stream",
+    "build": "lerna run build --stream",
+    "build-package:staging": "lerna run build:staging --scope=* --ignore=host --stream",
+    "run-package:staging": "lerna run start:staging --scope=* --ignore=host --stream",
+    "build-host:staging": "lerna run build:staging --scope=host ",
+    "run-host:staging": "lerna run start:staging --scope=host",
+    "start-app-packages:staging": "concurrently kill-others \"yarn build-package:staging\" \"yarn run-package:staging\"",
+    "start-host-packages:staging": "concurrently \"yarn build-host:staging\" \"yarn run-host:staging\"",   
+    "build-package:pre-production": "lerna run build:pre-production --scope=* --ignore=host --stream",
+    "run-package:pre-production": "lerna run start:pre-production --scope=* --ignore=host --stream",
+    "build-host:pre-production": "lerna run build:pre-production --scope=host ",
+    "run-host:pre-production": "lerna run start:pre-production --scope=host",
+    "start-app-packages:pre-production": "concurrently kill-others \"yarn build-package:pre-production\" \"yarn run-package:pre-production\"",
+    "start-host-packages:pre-production": "concurrently \"yarn build-host:pre-production\" \"yarn run-host:pre-production\"",
+    "build-package:production": "lerna run build:production --scope=* --ignore=host --stream",
+    "run-package:production": "lerna run start:production --scope=* --ignore=host --stream",
+    "build-host:production": "lerna run build:production --scope=host ",
+    "run-host:production": "lerna run start:production --scope=host",
+    "start-app-packages:production": "concurrently kill-others \"yarn build-package:production\" \"yarn run-package:production\"",
+    "start-host-packages:production": "concurrently \"yarn build-host:production\" \"yarn run-host:production\""  
   },
   "dependencies": {
-    "axios": "^1.4.0",
     "concurrently": "^8.0.1",
     "nodemon": "^2.0.22"
   }
