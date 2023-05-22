@@ -3,7 +3,7 @@ const nextConfig = {
   reactStrictMode: true,
   assetPrefix: process.env.HOST,
   images: {
-    domains: ["image.tmdb.org"]
+    domains: ["fakestoreapi.com","image.winudf.com"]
   },
   swcMinify: true,
   async headers() {
@@ -24,7 +24,8 @@ const nextConfig = {
 const remotes = isServer => {
   const location = isServer ? 'ssr' : 'chunks';
   return {
-    movies: `movies@${process.env.MOVIES_HOST}/_next/static/${location}/remoteEntry.js`
+    product: `product@${process.env.PRODUCT_HOST}/_next/static/${location}/remoteEntry.js`,
+    homepage: `homepage@${process.env.HOMEPAGE_HOST}/_next/static/${location}/remoteEntry.js`,
   };
 };
 

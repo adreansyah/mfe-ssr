@@ -19,13 +19,13 @@ services:
       - 4200:4200
 
 
-  movies:
+  product:
     build:
-      context: ./packages/movies
+      context: ./packages/product
       dockerfile: Dockerfile
       args:
         - ENVIRONTMENT=staging
-    image: edts-movies:latest
+    image: edts-product:latest
     depends_on:
       - host
     ports:

@@ -2,4 +2,8 @@
 @tailwind components;
 @tailwind utilities; */
 
-@import '../../shared/globals.css'
+@import "../../shared/globals.css";
+
+body {
+  background: white;
+}
