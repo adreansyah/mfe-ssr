@@ -1,2 +1,2 @@
 declare module "product/product-baru";
-declare module "product/detail"; 
+declare module "product/product-register"; 

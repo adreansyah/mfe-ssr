@@ -1,5 +1,5 @@
 import React from "react";
-import Product from "product/detail";
+import Product from "product/product-register";
 
 const App = () => {
   return <Product />;

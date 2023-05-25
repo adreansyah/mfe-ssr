@@ -10,7 +10,7 @@ const remotes = isServer => {
 };
 
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false,
   assetPrefix: process.env.HOST,
   images: {
     domains: ["image.tmdb.org", "laz-img-cdn.alicdn.com"],

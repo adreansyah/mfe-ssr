@@ -22,5 +22,5 @@
     "next-env.d.ts", 
     "**/*.ts", "**/*.tsx"
   ],
-  "exclude": ["node_modules", "product/product-baru"]
+  "exclude": ["node_modules"]
 }

@@ -1,6 +1,6 @@
 const NextFederationPlugin = require('@module-federation/nextjs-mf');
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false,
   assetPrefix: process.env.HOST,
   images: {
     domains: ["fakestoreapi.com","image.winudf.com"]

@@ -2,8 +2,15 @@
 const NextFederationPlugin = require('@module-federation/nextjs-mf');
 
 
+
+const remotes = isServer => {
+  return {
+    cart: `cart@http://localhost:4024/remoteEntry.js`
+  };
+};
+
 const nextConfig = {
-  reactStrictMode: true,
+  reactStrictMode: false,
   assetPrefix: process.env.HOST,
   images: {
     domains: ["fakestoreapi.com", "image.winudf.com"],
@@ -31,13 +38,10 @@ module.exports = {
         name: 'product',
         filename: 'static/chunks/remoteEntry.js',
         exposes: {
-          './mvd': './src/pages/movies/[slug].tsx',
-          './product-baru': './src/pages/product-baru/index.tsx',
-          './detail': './src/pages/product-baru/[slug].tsx',
+          './product-register': './src/pages/product-register/index.tsx',
+          './detail': './src/pages/product-register/[slug].tsx',
         },
-        remotes: {
-
-        },
+        remotes: remotes(),
         shared: {
           // ...deps 
         },
