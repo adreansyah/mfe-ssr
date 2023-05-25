@@ -66,7 +66,7 @@ export const Card = ({
         href={`/product/${id}`}
         className="inline-flex justify-center items-center px-2 w-full py-2 text-sm font-medium text-center text-white bg-blue-500 rounded-md hover:bg-blue-600 focus:ring-4 focus:outline-none focus:ring-blue-300"
       >
-        Beli
+        Belis
       </Link>
     </div>
   );
